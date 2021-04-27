@@ -8,6 +8,8 @@
       <button @click="calculate('-')">-</button>
       <button @click="calculate('/')">/</button>
       <button @click="calculate('*')">*</button>
+      <button @click="calculate('pow')">pow</button>
+      <button @click="calculate('trunc')">trunc</button>
     </div>
   </div>
 </template>
@@ -42,8 +44,14 @@ export default {
     //   }
     // },
     calculate (arg) {
-      /* eslint-disable-next-line */
-      this.result = eval(`${this.operand1} ${arg} ${this.operand2}`)
+      if (arg === 'pow') {
+        this.result = Math.pow(this.operand1, this.operand2)
+      } else if (arg === 'trunc') {
+        this.result = Math.trunc(this.operand1 / this.operand2)
+      } else {
+        /* eslint-disable-next-line */
+        this.result = eval(`${this.operand1} ${arg} ${this.operand2}`)
+      }
     }
   }
 }
