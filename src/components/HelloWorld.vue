@@ -116,6 +116,7 @@ export default {
     clearAll () {
       this.operand1 = []
       this.operand2 = []
+      this.result = 0
     }
   }
 }
