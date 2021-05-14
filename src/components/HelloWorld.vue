@@ -107,10 +107,10 @@ export default {
     },
     clearOperandLastDigit () {
       if (this.operandValue === 'Operand1') {
-        this.operand1.slice(0, -1)
+        this.operand1 = this.operand1.slice(0, -1)
       }
       if (this.operandValue === 'Operand2') {
-        this.operand2 = []
+        this.operand2 = this.operand2.slice(0, -1)
       }
     },
     clearAll () {
